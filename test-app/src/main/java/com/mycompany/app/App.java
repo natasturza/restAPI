@@ -11,11 +11,11 @@ public class App
     {
     try {
     HttpResponse<JsonNode> jsonResponse =
-    Unirest.post("http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids")
+    Unirest.get("http://localhost:8080/openidm/managed/user/?_queryId=query-all-ids")
     .header("X-OpenIDM-Username", "openidm-admin")
     .header("X-OpenIDM-Password", "openidm-admin")
     .asJson();
-	System.out.println( jsonResponse.getStatus() );
+	System.out.println( jsonResponse.getBody() );
 	} catch (UnirestException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();
