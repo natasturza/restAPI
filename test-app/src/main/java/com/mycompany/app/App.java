@@ -18,7 +18,7 @@ public class App
 					Unirest.get("https://pokeapi.co/api/v2/pokemon/ditto/")
 					  .header("accept", "application/json")
 					  .asJson();
-			System.out.println( jsonResponse.getHeaders() );
+			System.out.println( jsonResponse.getBody() );
 		} catch (UnirestException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
